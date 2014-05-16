@@ -1,0 +1,34 @@
+{
+	"folders": 
+	[
+		{
+			"path": "src",
+			"follow_symlinks": true
+		}
+	],
+
+	"settings":	
+	{
+	    "ensure_newline_at_eof_on_save": true
+	},
+
+	"build_systems": 
+	[
+		{
+			"name": "Bmake",
+			// Set the compile directory to the appropriate assignment number
+			"working_dir": "$project_path/src/kern/compile/ASSTX",
+			// Change the path to include the OS161 binaries (bmake and the like)
+			"path": "/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/path/to/os161/tools/bin",
+			"cmd": ["bmake"],
+			"file_regex": "^(...*?):(\\d+): (.+)$", 
+
+			"variants": [
+				{
+					"name": "Install",
+					"cmd": ["bmake", "install"]
+				}
+			]
+		}
+	]
+}
