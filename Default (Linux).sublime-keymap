@@ -1,0 +1,4 @@
+[
+	// { "keys": ["ctrl+b"], "command": "build" },
+	{ "keys": ["ctrl+shift+b"], "command": "build", "args": {"variant": "Install"} }
+]
